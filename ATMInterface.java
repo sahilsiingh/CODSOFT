@@ -3,7 +3,6 @@ import java.util.Scanner;
 class BankAccount {
     private double balance;
 
-    // Constructor to initialize the account with an initial balance
     public BankAccount(double initialBalance) {
         if (initialBalance >= 0) {
             this.balance = initialBalance;
@@ -13,7 +12,6 @@ class BankAccount {
         }
     }
 
-    // Method to withdraw amount from the account
     public boolean withdraw(double amount) {
         if (amount > 0 && amount <= balance) {
             balance -= amount;
@@ -22,14 +20,13 @@ class BankAccount {
         return false;
     }
 
-    // Method to deposit amount into the account
+    
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
         }
     }
 
-    // Method to check the account balance
     public double getBalance() {
         return balance;
     }
@@ -39,13 +36,11 @@ class ATM {
     private BankAccount account;
     private Scanner scanner;
 
-    // Constructor to initialize ATM with a bank account and scanner for user input
     public ATM(BankAccount account) {
         this.account = account;
         this.scanner = new Scanner(System.in);
     }
 
-    // Method to display the ATM menu options
     public void displayMenu() {
         while (true) {
             System.out.println("\nATM Menu:");
@@ -75,7 +70,6 @@ class ATM {
         }
     }
 
-    // Method to handle withdrawal
     private void withdraw() {
         System.out.print("Enter the amount to withdraw: ");
         double amount = scanner.nextDouble();
@@ -89,7 +83,6 @@ class ATM {
         }
     }
 
-    // Method to handle deposit
     private void deposit() {
         System.out.print("Enter the amount to deposit: ");
         double amount = scanner.nextDouble();
@@ -102,7 +95,6 @@ class ATM {
         }
     }
 
-    // Method to check the account balance
     private void checkBalance() {
         System.out.println("Your current balance is: " + account.getBalance());
     }
@@ -110,13 +102,10 @@ class ATM {
 
 public class ATMInterface {
     public static void main(String[] args) {
-        // Creating a new bank account with an initial balance of 1000
         BankAccount userAccount = new BankAccount(1000.0);
 
-        // Creating the ATM instance and passing the bank account to it
         ATM atm = new ATM(userAccount);
 
-        // Display the ATM menu and allow the user to interact with it
         atm.displayMenu();
     }
 }
