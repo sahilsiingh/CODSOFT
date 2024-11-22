@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+ 
 public class StudentResults {
 
     public static String calculateGrade(double averagePercentage) {
