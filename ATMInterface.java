@@ -7,7 +7,7 @@ class BankAccount {
         if (initialBalance >= 0) {
             this.balance = initialBalance;
         } else {
-            System.out.println("Initial balance cannot be negative. Setting balance to 0.");
+            System.out.println("Initial balance cannot be negative. Setting balance to  0.");
             this.balance = 0;
         }
     }
