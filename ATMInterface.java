@@ -9,7 +9,7 @@ class BankAccount {
         } else {
             System.out.println("Initial balance cannot be negative. Setting balance to  0.");
             this.balance = 0; 
-        } 
+        }  
     }
 
     public boolean withdraw(double amount) {
